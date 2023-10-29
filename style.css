@@ -753,6 +753,14 @@ input:hover {
         opacity: 0;
         transition: opacity 0.3s;
     }
+    .film-card .poster-container:hover::after {
+        position: absolute;
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
     
 
     .film-card .poster-container .delete {
