@@ -690,6 +690,7 @@ input:hover {
         margin: 20px 0 0 0;
         padding: 20px 10px;
         width: 95vw;
+        --webkit-backdrop-filter: blur(20px);
     }
 
     .custom-file-upload {
@@ -716,25 +717,28 @@ input:hover {
         align-items: center;
         padding: 0;
         margin: 0;
-        width: 95vw;
     }
 
     .film-card {
         padding: 0;
         margin: 20px auto;
-        width: 95vw;
+        --webkit-backdrop-filter: blur(20px);
     }
 
     .film-card .poster-container {
-        width: 100%;
+        max-width: auto;
+        max-height: 75vh;
     }
 
     .film-card .poster {
-        width: 100%;
+        max-width: auto;
+        max-height: 75vh;
+
     }
     
     .film-card .poster-container::after {
-        width: 100%;
+        max-width: auto;
+        max-height: 75vh;
     }
 
     .film-card .poster-container .delete {
