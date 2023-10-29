@@ -737,7 +737,7 @@ input:hover {
         position: relative;
     }
     
-    .film-card > .poster-containe::after {
+    .film-card > .poster-container::after {
         content: '';
         position: absolute;
         display: block;
