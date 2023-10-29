@@ -735,7 +735,7 @@ input:hover {
         max-height: 75vh;
     }
     
-    .film-card .poster-container:after {
+    .card-collection > .film-card > .poster-container > .poster::after {
         content: '';
         position: absolute;
         display: block;
