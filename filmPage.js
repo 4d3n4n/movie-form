@@ -1,5 +1,5 @@
 // RESET creation
-if (window.location.href.includes("filmList.html")) {
+if (window.location.href.includes("https://movie-form-list.netlify.app/filmlist")) {
     let reset = document.getElementById("reset");
     let ajout = document.getElementById("ajout");
 
@@ -14,7 +14,7 @@ if (window.location.href.includes("filmList.html")) {
     });
 
     ajout.addEventListener("click", () => {
-        window.location.href = "index.html";
+        window.location.href = "https://movie-form-list.netlify.app/";
     });
 }
 
@@ -204,7 +204,7 @@ function init() {
 // => EDIT FILM
 function editFilm(edit) {
     edit.addEventListener('click', () => {
-        window.location.href  = 'index.html?id=' + edit.id;
+        window.location.href  = 'https://movie-form-list.netlify.app?id=' + edit.id;
     });
 }
 
@@ -216,6 +216,6 @@ function deleteFilm(deleteIcon) {
         localStorage.removeItem("film " + id);
         localStorage.removeItem("genres" + id);
         localStorage.removeItem("actors" + id);
-        window.location.href = "filmList.html";
+        window.location.href = "https://movie-form-list.netlify.app/filmlist";
     });
 }

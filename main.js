@@ -228,7 +228,7 @@ function valider() {
 
     localStorage.setItem("id", id);
 
-    window.location.href = "filmList.html";
+    window.location.href = "https://movie-form-list.netlify.app/filmlist";
 }
 
 
@@ -361,14 +361,12 @@ function valideEdit() {
     for (let a = 0; a < x; a++) {
         let genre = document.getElementById('genre-film' + a).textContent;
         saveGenres.push(genre);
-        // localStorage.setItem("genre" + a, genre);
     }
 
     saveActors.length = 0;
     for (let b = 0; b < j; b++) {
         let actor = document.getElementById('actors-film' + b).textContent;
         saveActors.push(actor);
-        // localStorage.setItem("actor" + b, actor);
     }
 
 
@@ -393,7 +391,7 @@ function valideEdit() {
     localStorage.setItem("actors" + id, JSON.stringify(saveActors));
     localStorage.setItem("film " + id, JSON.stringify(saveFilmData));
 
-    window.location.href = "filmList.html";
+    window.location.href = "https://movie-form-list.netlify.app/filmlist";
 }
 
 
@@ -453,7 +451,7 @@ let filmList = document.getElementById('film-list');
 filmList.addEventListener('click', displayFilmList)
 
 function displayFilmList() {
-    window.location.href = "filmList.html";
+    window.location.href = "https://movie-form-list.netlify.app/filmlist";
 }
 
 // if (x === 0 ) {
