@@ -754,14 +754,8 @@ input:hover {
         opacity: 0;
         transition: opacity 0.3s;
     }
-    .film-card .poster:hover .poster-container::after {
-        z-index: 5;
-        position: absolute;
+    .film-card:hover .poster-container::after {
         opacity: 0.5;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
     }
     
 
