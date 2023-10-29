@@ -7,15 +7,28 @@
 body {
     box-sizing: border-box;
     padding: 0;
-    background: url(/images/spiderman-no-way-home-movie-poster-hd-wallpaper-uhdpaper.com-571@1@e.jpg) no-repeat;
-    background-position: center;
-    background-size: cover;
-    /* background: #FFDEE9; */
-    /* background-image: linear-gradient(45deg, #FFDEE9 10%, #96ffff 72%, #ffffff 96%); */
+    background: #FFDEE9;
+    background-image: linear-gradient(45deg, #FFDEE9 10%, #96ffff 72%, #ffffff 96%);
     height: auto;
     min-height: 100vh;
     width: 100%;
     font-family: 'Raleway', sans-serif;
+}
+
+main {
+    box-sizing: border-box;
+    background: url(/images/spiderman-no-way-home-movie-poster-hd-wallpaper-uhdpaper.com-571@1@e.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     animation: bg 4s ease-in-out infinite;
     animation-direction: alternate;
 }
@@ -30,18 +43,6 @@ body {
         background-position: center;
         background-size: cover;
     }
-}
-
-main {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 p {
@@ -662,6 +663,10 @@ input:hover {
 
     body {
         width: 100vw;
+    }
+
+    main {
+        width: 100vw;
         background: url(/images/spiderman-no-way-home-movie-poster-phone-wallpaper-hd-uhdpaper.com-571@1@e.jpg) no-repeat;
         background-position: center;
         background-size: cover;
@@ -710,7 +715,7 @@ input:hover {
         justify-content: center;
         align-items: center;
         padding: 0;
-        margin: auto;
+        margin: 0;
         width: 95vw;
     }
 
