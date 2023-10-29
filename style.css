@@ -669,11 +669,16 @@ input:hover {
 
     main {
         width: 100vw;
+        height: 100%;
         /* background: url(/images/spiderman-no-way-home-movie-poster-phone-wallpaper-hd-uhdpaper.com-571@1@e.jpg) no-repeat;
         background-position: center;
         background-size: cover; */
         background: #FFDEE9;
         background-image: linear-gradient(45deg, #cfb4bd 10%, #3c6c6c 72%, #787878 96%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         /* animation: bg 4s ease-in-out infinite;
         animation-direction: alternate-reverse; */
     }
