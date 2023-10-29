@@ -8,7 +8,7 @@ body {
     box-sizing: border-box;
     padding: 0;
     background: #FFDEE9;
-    background-image: linear-gradient(45deg, #FFDEE9 10%, #96ffff 72%, #ffffff 96%);
+    background-image: linear-gradient(45deg, #cfb4bd 10%, #3c6c6c 72%, #787878 96%);
     height: auto;
     min-height: 100vh;
     width: 100%;
@@ -17,7 +17,7 @@ body {
 
 main {
     box-sizing: border-box;
-    background: url(/images/spiderman-no-way-home-movie-poster-hd-wallpaper-uhdpaper.com-571@1@e.jpg) no-repeat;
+    /* background: url(/images/spiderman-no-way-home-movie-poster-hd-wallpaper-uhdpaper.com-571@1@e.jpg) no-repeat; */
     background-position: center;
     background-size: cover;
     padding: 0;
@@ -29,10 +29,10 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: bg 4s ease-in-out infinite;
-    animation-direction: alternate;
+    /* animation: bg 4s ease-in-out infinite;
+    animation-direction: alternate; */
 }
-@keyframes bg {
+/* @keyframes bg {
     0% {
         background: url(/images/spiderman-no-way-home-movie-poster-hd-wallpaper-uhdpaper.com-571@1@e.jpg) no-repeat;
         background-position: center;
@@ -43,7 +43,7 @@ main {
         background-position: center;
         background-size: cover;
     }
-}
+} */
 
 p {
     padding: 0;
@@ -733,12 +733,12 @@ input:hover {
     .film-card .poster {
         max-width: auto;
         max-height: 75vh;
-
     }
     
     .film-card .poster-container::after {
         content: '';
         position: absolute;
+        display: block;
         top: 0;
         left: 0;
         width: 100%;
