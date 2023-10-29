@@ -737,10 +737,16 @@ input:hover {
     }
     
     .film-card .poster-container::after {
+        content: '';
         position: absolute;
-        max-width: auto;
-        max-height: 75vh;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        opacity: 0;
+        transition: opacity 0.3s;
     }
+    
 
     .film-card .poster-container .delete {
         top: 18vh;
