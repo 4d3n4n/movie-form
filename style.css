@@ -737,6 +737,7 @@ input:hover {
     }
     
     .film-card .poster-container::after {
+        position: absolute;
         max-width: auto;
         max-height: 75vh;
     }
@@ -746,6 +747,11 @@ input:hover {
     }
     .film-card .poster-container .edit {
         top: 45vh;
+    }
+
+    .film-card .info-container {
+        padding: 15px;
+        --webkit-backdrop-filter: blur(20px);
     }
 
     .film-info {
