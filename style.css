@@ -1,0 +1,783 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    box-sizing: border-box;
+    padding: 0;
+    background: url(/images/spiderman-no-way-home-movie-poster-hd-wallpaper-uhdpaper.com-571@1@e.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* background: #FFDEE9; */
+    /* background-image: linear-gradient(45deg, #FFDEE9 10%, #96ffff 72%, #ffffff 96%); */
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    animation: bg 4s ease-in-out infinite;
+    animation-direction: alternate;
+}
+@keyframes bg {
+    0% {
+        background: url(/images/spiderman-no-way-home-movie-poster-hd-wallpaper-uhdpaper.com-571@1@e.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    100% {
+        background: url(/images/meg-2-movie-jason-statham-hd-wallpaper-uhdpaper.com-509@1@l.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+main {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+    text-align: justify;
+    font-size: 12px;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+span {
+    padding: 0;
+    margin: 0;
+    text-align: justify;
+    font-size: 12px;
+}
+
+label {
+    color: #fff;
+}
+
+
+.buttons-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ajout, .reset, .film-list {
+    padding: 10px 10px;
+    margin: 20px;
+    width: 200px;
+    border: none;
+    background-color: #0099ff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 19px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+.ajout:hover, .reset:hover {
+    background-color: #008eec;
+    box-shadow: none;
+}
+
+.film-list:disabled {
+    opacity: 0.5;
+    box-shadow: none;
+    cursor: unset;
+}
+.film-list:disabled:hover {
+    background-color: #0099ff;
+}
+
+
+
+
+
+
+
+
+
+
+
+.creation-film {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+    padding: 50px;
+    height: auto;
+    width: auto;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #ebf9ff4a;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    --webkit-backdrop-filter: blur(20px);
+}
+
+.creation-film .form-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 0 0 20px 0;
+    color: #0099ff;
+    border: 2px solid #0099ff;
+    border-radius: 30px;
+    padding: 10px 20px;
+}
+
+.img-upload {
+    margin: 20px 0;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* Personnaliser le style du bouton de sélection */
+.custom-file-upload {
+    background-color: #0099ff;
+    text-transform: uppercase;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.4s;
+}
+
+.custom-file-upload:hover {
+    background-color: #008eec;
+    box-shadow: none;
+}
+
+.img-upload i {
+    margin-left: 10px;
+}
+
+.img-upload .delete-upload {
+    background-color: #0099ff;
+    color: white;
+    padding: 11px;
+    border: none;
+    text-align: center;
+    text-justify: center;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all ease-in-out 0.3s;
+    margin-left: 10px;
+    display: none;
+}
+.img-upload .delete-upload:hover {
+    background-color: #008eec;
+    scale: 1.1;
+}
+
+.form-uploaded-poster {
+    width: 100px;
+    margin: 20px 0 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: none;
+}
+
+
+
+.creation-film .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 0;
+    height: auto;
+    width: 90%;
+}
+
+.container .form-label,
+.input-container .form-label {
+    padding: 0;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+p input,
+input[type="date" i] {
+    margin-top: 5px;
+    background: #00000065;
+    color: #fff;
+}
+
+.creation-film .add-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: auto;
+    width: 90%;
+}
+
+.add-info-container .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.input-container .add-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #0099ff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border-radius: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+.input-container .add-button:hover {
+    background-color: #008eec;
+    box-shadow: none;
+}
+
+.input-container .add-button:disabled {
+    opacity: 0.5;
+    box-shadow: none;
+    cursor: unset;
+}
+.input-container .add-button:disabled:hover {
+    background-color: #0099ff;
+}
+
+
+
+.boulle-form-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    align-items: center;
+    justify-content: center;
+    margin-right: -5px; /* Pour compenser les marges négatives des .boulle */
+    margin-left: -5px;
+}
+
+.boulle-form-container .boulle-form {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    background: #0099ff;
+    color: #fff;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 10px;
+    white-space: nowrap;
+    margin-right: 5px; /* Espace entre les .boulle */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.4s;
+}
+
+.boulle-form-contianer .boulle-form:hover {
+    background-color: #008eec;
+    box-shadow: none;
+}
+
+.boulle-form i {
+    margin-left: 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+.creation {
+    padding: 10px 0;
+    margin: 20px 0 0 0;
+    width: 200px;
+    border: none;
+    background-color: #0099ff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 19px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+.creation:hover {
+    background-color: #008eec;
+    box-shadow: none;
+}
+
+.creation:disabled {
+    opacity: 0.5;
+    box-shadow: none;
+    cursor: unset;
+}
+.creation:disabled:hover {
+    background-color: #0099ff;
+}
+
+
+.modifier {
+    padding: 10px 0;
+    margin: 20px 0 0 0;
+    width: 200px;
+    border: none;
+    background-color: #0099ff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 19px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+.modifier:hover {
+    background-color: #008eec;
+    box-shadow: none;
+}
+
+.modifier:disabled {
+    opacity: 0.5;
+    box-shadow: none;
+    cursor: unset;
+}
+.modifier:disabled:hover {
+    background-color: #0099ff;
+}
+
+
+
+input {
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    transition: scale 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+input:hover {
+    scale: 1.05;
+}
+
+
+
+
+
+
+
+
+
+
+
+.card-collection {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.film-card {
+    margin: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: min-content;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #c1ecff4a;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    --webkit-backdrop-filter: blur(20px);
+    transition: all 0.1s ease-in-out;
+}
+.film-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.film-card .scroll{
+    z-index: 999;
+    position: absolute;
+    transform: translateX(50%) translateY(-50%);
+    right: 10px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    animation: scroll-down 3.5s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+@keyframes scroll-down {
+    0% {
+        bottom: 200px;
+    }
+    100% {
+        bottom: 10px;
+    }
+}
+
+.film-card .poster-container {
+    box-sizing: border-box;
+    width: 100%;
+    height: 500px;
+    margin: 0;
+    padding: 0;
+}
+
+.film-card .poster {
+    box-sizing: border-box;
+    height: 100%;
+    width: auto;
+}
+.film-card .poster-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    background: rgba(0, 0, 0, 1);
+    opacity: 0; 
+    transition: opacity 0.3s;
+}
+.film-card .poster-container:hover::after {
+    opacity: 0.5;
+}
+
+
+
+.poster-container .delete {
+    position: absolute;
+    z-index: 999;
+    color: #fff;
+    font-size: 100px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 7px 5px;
+    border: 10px solid #fff;
+    border-radius: 50%;
+    top: 140px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    cursor: pointer;    
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+}
+.film-card .poster-container:hover .delete {
+    opacity: 0.5;
+}
+
+.film-card .poster-container .delete:hover {
+    opacity: 1;
+}
+
+.poster-container .edit {
+    position: absolute;
+    z-index: 999;
+    color: #fff;
+    font-size: 100px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 10px 10px;
+    border: 10px solid #fff;
+    border-radius: 50%;
+    top: 370px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    cursor: pointer;    
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+}
+.film-card .poster-container:hover .edit {
+    opacity: 0.5;
+}
+
+.film-card .poster-container .edit:hover {
+    opacity: 1;
+}
+
+
+
+
+.film-card .info-container {
+    padding: 20px;
+    width: 100%;
+}
+
+
+.film-info {
+    height: 200px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 2px;
+}
+
+/* hide scrollbar but allow scrolling */
+.film-info {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-x: scroll; 
+}
+.film-info::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+
+.film-info h2 {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.film-info .card-label1 {
+    display: flex;
+    margin: 0 0 5px 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.film-info .card-label {
+    display: flex;
+    margin: 20px 0 5px 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 15px;
+}
+.film-info .no-margin {
+    margin: 20px 0 0 0;
+}
+
+
+
+.boulle-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    align-items: center;
+    margin-right: -5px; /* Pour compenser les marges négatives des .boulle */
+    margin-left: -5px;
+}
+
+.boulle-container .boulle {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    background: #000;
+    color: #fff;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 10px;
+    white-space: nowrap;
+    margin-right: 5px; /* Espace entre les .boulle */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.film-info .description-film {
+    text-transform: initial;
+}
+
+
+.logo_link {
+    z-index: 999;
+}
+.logo {
+    width: 120px;
+    margin: 30px 0 0 0;
+    padding: 0;
+    transition: all ease-in-out 250ms;
+}
+.logo:hover {
+    width: 130px;
+    margin: 27px 0 0 0;
+    opacity: 0.8;
+}
+
+.mentions {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 13px;
+    position: relative;
+    min-height: 0;
+    min-width: 100%;
+    bottom: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+
+}
+.adenan-link {
+    color: #fff;
+    transition: ease-in-out 250ms;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    body {
+        width: 100vw;
+        background: url(/images/spiderman-no-way-home-movie-poster-phone-wallpaper-hd-uhdpaper.com-571@1@e.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+        animation: bg 4s ease-in-out infinite;
+        animation-direction: alternate-reverse;
+    }
+    @keyframes bg {
+        0% {
+            background: url(/images/spiderman-no-way-home-movie-poster-phone-wallpaper-hd-uhdpaper.com-571@1@e.jpg) no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        100% {
+            background: url(/images/meg-2-movie-jason-statham-phone-wallpaper-hd-uhdpaper.com-509@1@l.jpg) no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    }
+
+    .creation-film {
+        margin: 20px 0 0 0;
+        padding: 20px 10px;
+        width: 95vw;
+    }
+
+    .custom-file-upload {
+        height: 30px;
+        font-size: 0.6em;
+    }
+
+    .delete-upload {
+        height: 30px;
+        font-size: 0.6em;
+    }
+
+    .creation-film .container {
+        flex-direction: column;
+    }
+
+    .creation-film .add-info-container {
+        flex-direction: column;
+    }
+
+    .card-collection {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: auto;
+        width: 95vw;
+    }
+
+    .film-card {
+        padding: 0;
+        margin: 20px auto;
+        width: 95vw;
+    }
+
+    .film-card .poster-container {
+        width: 100%;
+    }
+
+    .film-card .poster {
+        width: 100%;
+    }
+    
+    .film-card .poster-container::after {
+        width: 100%;
+    }
+
+    .film-card .poster-container .delete {
+        top: 18vh;
+    }
+    .film-card .poster-container .edit {
+        top: 45vh;
+    }
+
+    .film-info {
+        height: 200px;
+    }
+
+    .film-info .card-label1 {
+        margin: 0 0 5px 0;
+    }
+
+    .film-info .card-label {
+        margin: 10px 0 5px 0;
+    }
+
+    .film-info .no-margin {
+        margin: 10px 0 0 0;
+    }
+
+
+
+    .logo {
+        width: 60px;
+        margin: 3px 0;
+        padding: 0;
+
+    }
+    .logo:hover {
+        width: 60px;
+        margin: 0;
+        opacity: 0.8;
+    }
+
+    .mentions {
+        z-index: 1;
+        position: relative;
+        font-size: 10px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        bottom: 3px;
+    }
+}

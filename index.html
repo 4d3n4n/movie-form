@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIlm form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+
+<main>
+
+    <div class="creation-film">
+        <p id="form-title" class="form-title">Ajoute un film</p>
+        
+        <div class="img-upload">
+            <label for="poster-upload" id="custom-file-upload" class="custom-file-upload form-label">Choosir le poster du film<i class="fa fa-upload" id="upload-icon" aria-hidden="true"></i></label>
+            <i class="fa fa-trash-o delete-upload" id="delete-upload" aria-hidden="true"></i>
+            <input type="file" id="poster-upload" class="poster-upload" name="poster-upload" accept="image/png, image/jpeg"/>
+        </div>
+        <img src="" id="form-uploaded-poster" class="form-uploaded-poster" alt="">
+
+
+        <div class="container">
+            <p class="form-label">Titre<input id="titre" type="text"></p>
+            <p class="form-label">Réalisateur<input id="realisateur" type="text"></p>
+        </div>
+
+        <div class="add-info-container">
+            <div class="input-container">
+                <p class="form-label">Genre<input id="genre" class="genre" type="text"></p>
+                <button id="add-genre" class="add-genre add-button" type="button" onclick="return false">Ajouter</button>
+            </div>
+            <div class="boulle-form-container" id="genre-boulle-form-container">
+                <!-- BOULLES AVEC GENRES -->
+            </div>
+        </div>
+
+        <div class="container">
+            <p class="form-label">Description<input id="description" class="description" type="text"></p>
+            <p class="form-label">Durée<input id="duree" class="duree" type="time"></p>
+        </div>
+
+        <div class="add-info-container">
+            <div class="input-container">       
+                <p class=" form-label">Acteurs<input id="actors" class="actors" type="text"></p>
+                <button id="add-actor" class="add-actor add-button" type="button" onclick="return false">Ajouter</button>
+            </div>
+            <div class="boulle-form-container" id="actors-boulle-form-container">
+                <!-- BOULLES AVEC ACTEURS -->
+            </div>
+        </div>
+
+        <div class="container">
+            <p class="form-label">Pays<input id="pays" type="text"></p>
+            <label class="form-label">Date de sorite :<input type="date" class="date" id="date" name="date"/></label>
+        </div>
+
+        <button id="creation" class="creation" type="button" onclick="return false">Créer</button>
+    </div>
+
+    <button id="film-list" class="film-list" type="button" onclick="return false">voir la liste des films</button>
+
+    <p class="mentions">
+        <a class="logo_link" href="https://adenan.xyz"><img class="logo" src="./images/logo.png" alt="adenan-logo"></a>
+        <a class="adenan-link" href="https://adenan.xyz">Adenan KHACHNANE</a>Copyright © 2023.
+    </p>
+
+</main>
+    <script src="./main.js"></script>
+</body>
+</html>
