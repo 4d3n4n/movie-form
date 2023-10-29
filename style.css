@@ -717,22 +717,26 @@ input:hover {
         align-items: center;
         padding: 0;
         margin: 0;
+        position: relative;
     }
 
     .film-card {
         padding: 0;
         margin: 20px auto;
         --webkit-backdrop-filter: blur(20px);
+        position: relative;
     }
 
     .film-card .poster-container {
-        max-width: auto;
+        width: auto;
+        height: 500px;
         max-height: 75vh;
         position: relative;
     }
 
     .film-card .poster {
-        max-width: auto;
+        width: auto;
+        height: 500px;
         max-height: 75vh;
         position: relative;
     }
@@ -744,7 +748,7 @@ input:hover {
         top: 0;
         left: 0;
         width: 100%;
-        max-height: 75vh;
+        height: 100%;
         background: rgba(0, 0, 0, 0.9);
         opacity: 0;
         transition: opacity 0.3s;
