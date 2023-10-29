@@ -742,6 +742,7 @@ input:hover {
     }
     
     .film-card > .poster-container::after {
+        z-index: 5;
         content: '';
         position: absolute;
         display: block;
@@ -754,6 +755,7 @@ input:hover {
         transition: opacity 0.3s;
     }
     .film-card .poster-container:hover::after {
+        z-index: 5;
         position: absolute;
         opacity: 0.5;
         top: 0;
@@ -764,9 +766,11 @@ input:hover {
     
 
     .film-card .poster-container .delete {
+        z-index: 99;
         top: 18vh;
     }
     .film-card .poster-container .edit {
+        z-index: 99;
         top: 45vh;
     }
 
