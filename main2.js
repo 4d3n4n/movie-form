@@ -26,59 +26,29 @@ creation.disabled = true;
 
 
 
-// CONVERSION DE IMAGE IN BYTE ARRAY
-let posterForm = document.getElementById('form-uploaded-poster');
-
-posterUpload.addEventListener('change', function() {
-    posterByte();
-    uploadMessage();
-    console.log('1 file : ' + file);
-});
-
-function posterByte() {
-    let file = posterUpload.files[0];
-    let fileReader = new FileReader();
-
-    fileReader.onload = function(event) {
-        const arrayBuffer = event.target.result;
-        const bytes = new Uint8Array(arrayBuffer);
-        const dataURL = 'data:image/jpeg;base64,' + arrayBufferToBase64(bytes);
-        posterUrl = dataURL;
-        posterForm.src = posterUrl;
-        console.log(posterUrl);
-    }
-    fileReader.readAsArrayBuffer(file);
-}
-
-function arrayBufferToBase64(buffer) {
-    let binary = '';
-    const bytes = new Uint8Array(buffer);
-    for (let i = 0; i < bytes.byteLength; i++) {
-        binary += String.fromCharCode(bytes[i]);
-    }
-    return window.btoa(binary);
-}
-
-
 
 // upload poster settings
 let customPosterUpload = document.getElementById('custom-file-upload');
 let deleteUpload = document.getElementById('delete-upload');
-// let posterForm = document.getElementById('form-uploaded-poster');
+let posterForm = document.getElementById('form-uploaded-poster');
 function uploadMessage() {
     if (posterUpload.value === '') {
-        customPosterUpload.innerHTML = 'Choisir le poster du film<i class="fa fa-upload" id="upload-icon" aria-hidden="true"></i>';
+        customPosterUpload.innerHTML = 'Choosir le poster du film<i class="fa fa-upload" id="upload-icon" aria-hidden="true"></i>';
         deleteUpload.style.display = 'none';
         posterForm.style.display = 'none';
         posterUrl = null;
     } else {
         customPosterUpload.innerHTML = 'Poster chargé';
         deleteUpload.style.display = 'inline';
+        let posterFormUrl = posterUpload.value.replace("C:\\fakepath\\", "/images/");
+        posterForm.src = posterFormUrl;
         posterForm.style.display = 'block';
+        posterUrl = posterUpload.value.replace("C:\\fakepath\\", "/images/");
+        updatePosterUrl();
     }
     emptyControl();
 }
-// posterUpload.addEventListener('change', uploadMessage);
+posterUpload.addEventListener('change', uploadMessage);
 deleteUpload.addEventListener('click', () => {
     posterUpload.value = '';
     customPosterUpload.innerHTML = 'Choosir le poster du film<i class="fa fa-upload" id="upload-icon" aria-hidden="true"></i>';
@@ -391,23 +361,20 @@ function valideEdit() {
     for (let a = 0; a < x; a++) {
         let genre = document.getElementById('genre-film' + a).textContent;
         saveGenres.push(genre);
-        // localStorage.setItem("genre" + a, genre);
     }
 
     saveActors.length = 0;
     for (let b = 0; b < j; b++) {
         let actor = document.getElementById('actors-film' + b).textContent;
         saveActors.push(actor);
-        // localStorage.setItem("actor" + b, actor);
     }
 
 
     if (posterUrl === null || posterUrl === "" || posterUrl === saveFilmData.poster) {
         posterUrl = saveFilmData.poster;
+    } else {
+        posterUrl = posterUpload.value.replace("C:\\fakepath\\", "/images/");
     }
-    // else {
-    //     // posterUrl = posterUpload.value.replace("C:\\fakepath\\", "/images/");
-    // }
 
     // Mettre à jour les données du film
     saveFilmData.poster = posterUrl;
@@ -455,6 +422,18 @@ function emptyControl() {
     }
 }
 
+function updatePosterUrl() {
+    if (posterUpload.value === '') {
+        posterUrl = null;
+    } else {
+        posterUrl = posterUpload.value.replace("C:\\fakepath\\", "/images/");
+    }
+}
+
+posterUpload.addEventListener('change', () => {
+    uploadMessage();
+    updatePosterUrl();
+});
 
 // Appel de la fonction après la modification des champs
 titreInput.addEventListener('keyup', emptyControl);
@@ -474,3 +453,11 @@ filmList.addEventListener('click', displayFilmList)
 function displayFilmList() {
     window.location.href = "https://movie-form-list.netlify.app/filmlist";
 }
+
+// if (x === 0 ) {
+//     filmList.innerText = 'voir la liste des films'
+//     filmList.disabled = false;
+// } else {
+//     filmList.innerText = 'La liste de film est vide'
+//     filmList.disabled = true;
+// }
