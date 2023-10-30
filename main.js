@@ -32,7 +32,6 @@ let posterForm = document.getElementById('form-uploaded-poster');
 posterUpload.addEventListener('change', function() {
     posterByte();
     uploadMessage();
-    console.log('1 file : ' + file);
 });
 
 function posterByte() {
@@ -401,13 +400,6 @@ function valideEdit() {
         // localStorage.setItem("actor" + b, actor);
     }
 
-
-    if (posterUrl === null || posterUrl === "" || posterUrl === saveFilmData.poster) {
-        posterUrl = saveFilmData.poster;
-    }
-    // else {
-    //     // posterUrl = posterUpload.value.replace("C:\\fakepath\\", "/images/");
-    // }
 
     // Mettre à jour les données du film
     saveFilmData.poster = posterUrl;
