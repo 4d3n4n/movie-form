@@ -1,12 +1,13 @@
 // RESET creation
+let cardCollection = document.getElementById('card-collection');
+let filmCard = document.getElementById('film-card');
+let filmCard1 = document.getElementById('film-card1');
+
 if (window.location.href.includes("https://movie-form-list.netlify.app/filmlist")) {
     let reset = document.getElementById("reset");
     let ajout = document.getElementById("ajout");
 
     reset.addEventListener("click", () => {
-        let cardCollection = document.getElementById('card-collection');
-        let filmCard = document.getElementById('film-card');
-        let filmCard1 = document.getElementById('film-card1');
         localStorage.clear();
         cardCollection.removeChild(filmCard);
         cardCollection.removeChild(filmCard1);
@@ -216,6 +217,20 @@ function deleteFilm(deleteIcon) {
         localStorage.removeItem("film " + id);
         localStorage.removeItem("genres" + id);
         localStorage.removeItem("actors" + id);
-        window.location.href = "https://movie-form-list.netlify.app/filmlist";
+        // window.location.href = "https://movie-form-list.netlify.app/filmlist";
+        cardCollection.removeChild(deleteIcon.parentNode.parentNode);
     });
 }
+
+
+// Delete test filmCards
+const deleteTest1 = document.getElementById('deleteTest1');
+const deleteTest2 = document.getElementById('deleteTest2');
+
+deleteTest1.addEventListener('click', () => {
+    cardCollection.removeChild(filmCard);
+});
+
+deleteTest2.addEventListener('click', () => {
+    cardCollection.removeChild(filmCard1);
+});

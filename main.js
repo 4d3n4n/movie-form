@@ -390,14 +390,12 @@ function valideEdit() {
     for (let a = 0; a < x; a++) {
         let genre = document.getElementById('genre-film' + a).textContent;
         saveGenres.push(genre);
-        // localStorage.setItem("genre" + a, genre);
     }
 
     saveActors.length = 0;
     for (let b = 0; b < j; b++) {
         let actor = document.getElementById('actors-film' + b).textContent;
         saveActors.push(actor);
-        // localStorage.setItem("actor" + b, actor);
     }
 
 
