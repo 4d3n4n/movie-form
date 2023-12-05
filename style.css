@@ -130,7 +130,7 @@ label {
     background-color: #ebf9ff4a;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(20px);
-    --webkit-backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .creation-film .form-title {
@@ -419,7 +419,7 @@ input:hover {
     background-color: #c1ecff4a;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(20px);
-    --webkit-backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     transition: all 0.1s ease-in-out;
 }
 .film-card:hover {
@@ -699,7 +699,7 @@ input:hover {
         margin: 20px 0 0 0;
         padding: 20px 10px;
         width: 95vw;
-        --webkit-backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         position: relative;
     }
 
@@ -733,7 +733,7 @@ input:hover {
     .film-card {
         padding: 0;
         margin: 20px auto;
-        --webkit-backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         position: relative;
     }
 
@@ -785,7 +785,7 @@ input:hover {
 
     .film-card .info-container {
         padding: 15px;
-        --webkit-backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
     }
 
     .film-info {
